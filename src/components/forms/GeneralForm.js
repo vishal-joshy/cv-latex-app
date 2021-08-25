@@ -49,7 +49,7 @@ class GeneralForm extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>GeneralFrom</h1>
+				<h1>General From</h1>
 				<form>
 					<input type="text" placeholder="Name" onChange={this.updateName}></input>
 					<input type="email" placeholder="Email" onChange={this.updateEmail}></input>
