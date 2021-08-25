@@ -12,32 +12,32 @@ class EducationForm extends React.Component {
 		this.updateSchoolName = this.updateSchoolName.bind(this);
 		this.updateCourse = this.updateCourse.bind(this);
 		this.updateYear = this.updateYear.bind(this);
-		this.handleForm = this.handleForm.bind(this);
+		this.sendDataToApp = this.sendDataToApp.bind(this);
 	}
 
 	updateSchoolName(e) {
 		this.setState({
 			schoolName: e.target.value,
 		});
+		this.sendDataToApp();
 	}
+	
 	updateCourse(e) {
 		this.setState({
 			course: e.target.value,
 		});
+		this.sendDataToApp();
 	}
+
 	updateYear(e) {
 		this.setState({
 			year: e.target.value,
 		});
+		this.sendDataToApp();
 	}
-	handleForm(e) {
-		e.preventDefault();
-		const educationData = {
-			schoolName: this.state.schoolName,
-			course: this.state.course,
-			year: this.state.year,
-		};
-		this.props.getEducationData(educationData);
+
+	sendDataToApp() {
+		this.props.getEducationData(this.state);
 	}
 
 	render() {
@@ -48,9 +48,6 @@ class EducationForm extends React.Component {
 					<input type="text" placeholder="School Name" onChange={this.updateSchoolName}></input>
 					<input type="text" placeholder="Course" onChange={this.updateCourse}></input>
 					<input type="text" placeholder="Year" onChange={this.updateYear}></input>
-					<button type="submit" onClick={this.handleForm}>
-						Submit
-					</button>
 				</form>
 			</div>
 		);

@@ -12,34 +12,31 @@ class ExperienceForm extends React.Component {
 		this.updateCompanyName = this.updateCompanyName.bind(this);
 		this.updatePosition = this.updatePosition.bind(this);
 		this.updateYear = this.updateYear.bind(this);
-		this.handleForm = this.handleForm.bind(this);
+		this.sendDataToApp = this.sendDataToApp.bind(this);
 	}
 
 	updateCompanyName(e) {
 		this.setState({
 			companyName: e.target.value,
 		});
+		this.sendDataToApp();
 	}
 	updatePosition(e) {
 		this.setState({
 			position: e.target.value,
 		});
+		this.sendDataToApp();
 	}
 
 	updateYear(e) {
 		this.setState({
 			year: e.target.value,
 		});
+		this.sendDataToApp();
 	}
 
-	handleForm(e) {
-		e.preventDefault();
-		const experienceData = {
-			companyName: this.state.companyName,
-			position: this.state.position,
-			year: this.state.year,
-		};
-		this.props.getExperienceData(experienceData);
+	sendDataToApp() {
+		this.props.getExperienceData(this.state);
 	}
 
 	render() {
@@ -50,9 +47,6 @@ class ExperienceForm extends React.Component {
 					<input type="text" placeholder="Company Name" onChange={this.updateCompanyName}></input>
 					<input type="text" placeholder="Position" onChange={this.updatePosition}></input>
 					<input type="text" placeholder="Year" onChange={this.updateYear}></input>
-					<button type="submit" onClick={this.handleForm}>
-						Submit
-					</button>
 				</form>
 			</div>
 		);
