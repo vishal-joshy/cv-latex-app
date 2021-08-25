@@ -9,12 +9,16 @@ class App extends React.Component {
 		this.getGeneralData = this.getGeneralData.bind(this);
 		this.displayContents = this.displayContents.bind(this);
 		this.getEducationData = this.getEducationData.bind(this);
+		this.getExperienceData = this.getExperienceData.bind(this);
 	}
 
 	getGeneralData(data) {
 		console.log(data);
 	}
 	getEducationData(data) {
+		console.log(data);
+	}
+	getExperienceData(data) {
 		console.log(data);
 	}
 	displayContents() {
@@ -26,7 +30,7 @@ class App extends React.Component {
 			<div>
 				<GeneralForm getGeneralData={this.getGeneralData} />
 				<EducationForm getEducationData={this.getEducationData} />
-				<ExperienceForm />
+				<ExperienceForm getExperienceData={this.getExperienceData} />
 				<button onClick={this.displayContents}>Submit</button>
 			</div>
 		);
