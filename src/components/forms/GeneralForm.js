@@ -18,21 +18,15 @@ class GeneralForm extends React.Component {
 	updateName(e) {
 		this.setState({
 			name: e.target.value,
-			email: this.state.email,
-			number: this.state.number,
 		});
 	}
 	updateEmail(e) {
 		this.setState({
-			name: this.state.name,
 			email: e.target.value,
-			number: this.state.number,
 		});
 	}
 	updateNumber(e) {
 		this.setState({
-			name: this.state.name,
-			email: this.state.email,
 			number: e.target.value,
 		});
 	}

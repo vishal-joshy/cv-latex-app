@@ -18,22 +18,16 @@ class ExperienceForm extends React.Component {
 	updateCompanyName(e) {
 		this.setState({
 			companyName: e.target.value,
-			position: this.state.position,
-			year: this.state.year,
 		});
 	}
 	updatePosition(e) {
 		this.setState({
-			companyName: this.state.companyName,
 			position: e.target.value,
-			year: this.state.year,
 		});
 	}
 
 	updateYear(e) {
 		this.setState({
-			companyName: this.state.companyName,
-			position: this.state.position,
 			year: e.target.value,
 		});
 	}

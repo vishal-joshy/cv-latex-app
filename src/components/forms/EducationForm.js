@@ -18,21 +18,15 @@ class EducationForm extends React.Component {
 	updateSchoolName(e) {
 		this.setState({
 			schoolName: e.target.value,
-			course: this.state.course,
-			year: this.state.year,
 		});
 	}
 	updateCourse(e) {
 		this.setState({
-			schoolName: this.state.schoolName,
 			course: e.target.value,
-			year: this.state.year,
 		});
 	}
 	updateYear(e) {
 		this.setState({
-			schoolName: this.state.schoolName,
-			course: this.state.course,
 			year: e.target.value,
 		});
 	}
