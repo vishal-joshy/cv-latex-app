@@ -12,7 +12,7 @@ class DisplayMain extends React.Component {
 		if (this.props) {
 			console.log(this.props.data.generalData);
 			return (
-				<div class="main-display">
+				<div className="main-display">
 					<h1>Cv Preview</h1>
 					<General data={this.props.data.generalData} />
 					<Education data={this.props.data.educationData} />

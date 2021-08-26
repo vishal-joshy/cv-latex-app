@@ -3,6 +3,7 @@ import EducationForm from './components/forms/Education/EducationForm';
 import GeneralForm from './components/forms/General/GeneralForm';
 import ExperienceForm from './components/forms/Experience/ExperienceForm';
 import DisplayMain from './components/display/Main';
+import './App.css';
 
 class App extends React.Component {
 	constructor(props) {
@@ -56,12 +57,16 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<GeneralForm getGeneralData={this.getGeneralData} />
-				<EducationForm getEducationData={this.getEducationData} />
-				<ExperienceForm getExperienceData={this.getExperienceData} />
-				<button onClick={this.displayContents}>Submit</button>
-				<this.displayData />
+			<div className="cv-main">
+				<div className="cv-form">
+					<GeneralForm getGeneralData={this.getGeneralData} />
+					<EducationForm getEducationData={this.getEducationData} />
+					<ExperienceForm getExperienceData={this.getExperienceData} />
+					<button type="button" className="btn btn-primary" onClick={this.displayContents}>Submit</button>
+				</div>
+				<div className="cv-display">
+					<this.displayData />
+				</div>
 			</div>
 		);
 	}

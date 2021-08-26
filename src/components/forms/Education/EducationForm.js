@@ -21,7 +21,7 @@ class EducationForm extends React.Component {
 		});
 		this.sendDataToApp();
 	}
-	
+
 	updateCourse(e) {
 		this.setState({
 			course: e.target.value,
@@ -45,9 +45,26 @@ class EducationForm extends React.Component {
 			<div>
 				<h1>Education Form</h1>
 				<form>
-					<input type="text" placeholder="School Name" onChange={this.updateSchoolName}></input>
-					<input type="text" placeholder="Course" onChange={this.updateCourse}></input>
-					<input type="text" placeholder="Year" onChange={this.updateYear}></input>
+					<div className="form-group">
+						<input
+							className="form-control"
+							type="text"
+							placeholder="School Name"
+							onChange={this.updateSchoolName}
+						></input>
+						<input
+							className="form-control"
+							type="text"
+							placeholder="Course"
+							onChange={this.updateCourse}
+						></input>
+						<input
+							className="form-control"
+							type="text"
+							placeholder="Year"
+							onChange={this.updateYear}
+						></input>
+					</div>
 				</form>
 			</div>
 		);

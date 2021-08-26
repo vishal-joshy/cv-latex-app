@@ -44,9 +44,26 @@ class ExperienceForm extends React.Component {
 			<div>
 				<h1>Experience Form</h1>
 				<form>
-					<input type="text" placeholder="Company Name" onChange={this.updateCompanyName}></input>
-					<input type="text" placeholder="Position" onChange={this.updatePosition}></input>
-					<input type="text" placeholder="Year" onChange={this.updateYear}></input>
+					<div className="form-group">
+						<input
+							className="form-control"
+							type="text"
+							placeholder="Company Name"
+							onChange={this.updateCompanyName}
+						></input>
+						<input
+							className="form-control"
+							type="text"
+							placeholder="Position"
+							onChange={this.updatePosition}
+						></input>
+						<input
+							className="form-control"
+							type="text"
+							placeholder="Year"
+							onChange={this.updateYear}
+						></input>
+					</div>
 				</form>
 			</div>
 		);

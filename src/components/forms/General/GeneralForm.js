@@ -45,9 +45,11 @@ class GeneralForm extends React.Component {
 			<div>
 				<h1>General From</h1>
 				<form>
-					<input type="text" placeholder="Name" onChange={this.updateName}></input>
-					<input type="email" placeholder="Email" onChange={this.updateEmail}></input>
-					<input type="number" placeholder="Phone" onChange={this.updateNumber}></input>
+				<div className="form-group">
+					<input className="form-control" type="text" placeholder="Name" onChange={this.updateName}></input>
+					<input className="form-control" type="email" placeholder="Email" onChange={this.updateEmail}></input>
+					<input className="form-control" type="number" placeholder="Phone" onChange={this.updateNumber}></input>
+				</div>
 				</form>
 			</div>
 		);
