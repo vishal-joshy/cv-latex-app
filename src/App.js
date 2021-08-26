@@ -1,7 +1,7 @@
 import React from 'react';
-import EducationForm from './components/forms/EducationForm';
-import GeneralForm from './components/forms/GeneralForm';
-import ExperienceForm from './components/forms/ExperienceForm';
+import EducationForm from './components/forms/Education/EducationForm';
+import GeneralForm from './components/forms/General/GeneralForm';
+import ExperienceForm from './components/forms/Experience/ExperienceForm';
 import DisplayMain from './components/display/Main';
 
 class App extends React.Component {
