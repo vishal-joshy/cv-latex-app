@@ -22,14 +22,10 @@ function FormComponent({ getFormData }) {
 	};
 	return (
 		<div>
-			<form>
-				<GeneralForm getGeneralData={(data) => setGeneralData(data)} />
-				<EducationForm getEducationData={(data) => setEducationData(data)} />
-				<ExperienceForm getExperienceData={(data) => setExperienceData(data)} />
-				<button type="submit" onClick={onClickSubmit}>
-					Submit
-				</button>
-			</form>
+			<GeneralForm getGeneralData={(data) => setGeneralData(data)} />
+			<EducationForm getEducationData={(data) => setEducationData(data)} />
+			<ExperienceForm getExperienceData={(data) => setExperienceData(data)} />
+			<button onClick={onClickSubmit}>Submit</button>
 		</div>
 	);
 }
