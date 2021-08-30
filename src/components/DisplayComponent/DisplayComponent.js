@@ -3,12 +3,13 @@ import EducationDisplay from './EducationDisplay/EducationDisplay';
 import ExperienceDisplay from './ExperienceDisplay/ExperienceDisplay';
 import GeneralDisplay from './GeneralDisplay/GeneralDisplay';
 
-function DisplayComponent() {
+function DisplayComponent({ data }) {
+	console.log(data);
 	return (
 		<div>
-			<GeneralDisplay />
-			<EducationDisplay />
-			<ExperienceDisplay />
+			<GeneralDisplay generalData= {data.generalData}/>
+			<EducationDisplay educationData= {data.educationData} />
+			<ExperienceDisplay experienceData= {data.experienceData}/>
 		</div>
 	);
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 
-function EducationDisplay() {
+function EducationDisplay({ educationData }) {
 	return (
 		<div>
 			<h1>EducationDisplay</h1>
-			<div>SchoolName</div>
-			<div>Designation</div>
-			<div>Duration</div>
+			<div>SchoolName:{educationData.schoolName}</div>
+			<div>Subject:{educationData.subject}</div>
+			<div>Duration:{educationData.duration}</div>
 		</div>
 	);
 }
