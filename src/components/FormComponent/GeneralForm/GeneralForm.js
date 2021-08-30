@@ -1,31 +1,25 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function GeneralForm({ getGeneralData }) {
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
-	const [phone, setPhone] = useState('');
+	const [generalData, setGeneralData] = useState({ name: '', email: '', phone: '' });
 
 	useEffect(() => {
-		getGeneralData({ name: name, email: email, phone: phone });
+		getGeneralData(generalData);
 		return () => {};
-	}, [name, email, phone]);
+	}, [generalData]);
 
-	const handleName = useCallback((e) => {
-		setName(e.target.value);
-	}, []);
-	const handleEmail = useCallback((e) => {
-		setEmail(e.target.value);
-	}, []);
-	const handlePhone = useCallback((e) => {
-		setPhone(e.target.value);
-	}, []);
+	const handleInput = (e) => {
+		let values = { ...generalData };
+		values[e.target.name] = e.target.value;
+		setGeneralData(values);
+	};
 
 	return (
 		<div>
 			<h1>GeneralForm</h1>
-			<input type="text" placeholder="Name" onChange={handleName}></input>
-			<input type="text" placeholder="Email" onChange={handleEmail}></input>
-			<input type="text" placeholder="Phone" onChange={handlePhone}></input>
+			<input name="name" type="text" placeholder="Name" onChange={handleInput}></input>
+			<input name="email" type="text" placeholder="Email" onChange={handleInput}></input>
+			<input name="phone" type="text" placeholder="Phone" onChange={handleInput}></input>
 		</div>
 	);
 }

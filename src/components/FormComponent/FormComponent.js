@@ -12,7 +12,8 @@ function FormComponent({ getFormData }) {
 		return () => {};
 	}, [generalData, educationData, experienceData]);
 
-	const onClickSubmit = () => {
+	const onClickSubmit = (e) => {
+		e.preventDefault();
 		getFormData({
 			generalData: generalData,
 			educationData: educationData,
@@ -21,13 +22,14 @@ function FormComponent({ getFormData }) {
 	};
 	return (
 		<div>
-			<form action="onSubmitForm"></form>
-			<GeneralForm getGeneralData={(data) => setGeneralData(data)} />
-			<EducationForm getEducationData={(data) => setEducationData(data)} />
-			<ExperienceForm getExperienceData={(data) => setExperienceData(data)} />
-			<button type="submit" onClick={onClickSubmit}>
-				Submit
-			</button>
+			<form>
+				<GeneralForm getGeneralData={(data) => setGeneralData(data)} />
+				<EducationForm getEducationData={(data) => setEducationData(data)} />
+				<ExperienceForm getExperienceData={(data) => setExperienceData(data)} />
+				<button type="submit" onClick={onClickSubmit}>
+					Submit
+				</button>
+			</form>
 		</div>
 	);
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import EducationFormBase from './EducationFormBase';
 
 function EducationForm({ getEducationData }) {
 	const [schoolName, setSchoolName] = useState('');
@@ -23,6 +24,7 @@ function EducationForm({ getEducationData }) {
 	return (
 		<div>
 			<h1>EducationForm</h1>
+			<button>Add</button>
 			<input type="text" placeholder="SchoolName" onChange={handleSchoolName}></input>
 			<input type="text" placeholder="Subject" onChange={handleSubject}></input>
 			<input type="text" placeholder="Duration" onChange={handleDuration}></input>
