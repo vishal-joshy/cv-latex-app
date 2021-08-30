@@ -1,22 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 function GeneralForm({ getGeneralData }) {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
 
-	const handleName = (e) => {
+	useEffect(() => {
+		getGeneralData({ name: name, email: email, phone: phone });
+		return () => {};
+	}, [name, email, phone]);
+
+	const handleName = useCallback((e) => {
 		setName(e.target.value);
-		getGeneralData({ name: name, email: email, phone: phone });
-	};
-	const handleEmail = (e) => {
+	}, []);
+	const handleEmail = useCallback((e) => {
 		setEmail(e.target.value);
-		getGeneralData({ name: name, email: email, phone: phone });
-	};
-	const handlePhone = (e) => {
+	}, []);
+	const handlePhone = useCallback((e) => {
 		setPhone(e.target.value);
-		getGeneralData({ name: name, email: email, phone: phone });
-	};
+	}, []);
 
 	return (
 		<div>
