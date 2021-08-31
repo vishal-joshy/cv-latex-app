@@ -13,12 +13,11 @@ function EducationForm({ getEducationData }) {
 	const addForm = () => {
 		setEducationData((prev) => [...prev, { schoolName: '', subject: '', duration: '' }]);
 	};
-	
+
 	const handleInput = (e, index) => {
 		let values = [...educationData];
 		values[index][e.target.name] = e.target.value;
 		setEducationData(values);
-		console.log(values);
 	};
 
 	const removeData = (index) => {

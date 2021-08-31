@@ -4,9 +4,15 @@ function ExperienceDisplay({ experienceData }) {
 	return (
 		<div>
 			<h1>ExperienceDisplay</h1>
-			<div>CompanyName:{experienceData.companyName}</div>
-			<div>Designation:{experienceData.designation}</div>
-			<div>Duration:{experienceData.duration}</div>
+			{experienceData.map((data, index) => {
+				return (
+					<div key={index}>
+						<div>CompanyName:{data.companyName}</div>
+						<div>Designation:{data.designation}</div>
+						<div>Duration:{data.duration}</div>
+					</div>
+				);
+			})}
 		</div>
 	);
 }

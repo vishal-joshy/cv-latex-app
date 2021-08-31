@@ -1,31 +1,59 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function ExperienceForm({ getExperienceData }) {
-	const [companyName, setCompanyName] = useState('');
-	const [designation, setDesignation] = useState('');
-	const [duration, setDuration] = useState('');
+	const [experienceData, setExperienceData] = useState([
+		{ companyName: '', designation: '', duration: '' },
+	]);
 
 	useEffect(() => {
-		getExperienceData({ companyName: companyName, designation: designation, duration: duration });
+		getExperienceData(experienceData);
 		return () => {};
-	}, [companyName, designation, duration]);
+	}, [experienceData]);
 
-	const handleCompanyName = useCallback((e) => {
-		setCompanyName(e.target.value);
-	}, []);
-	const handleDesignation = useCallback((e) => {
-		setDesignation(e.target.value);
-	}, []);
-	const handleDuration = useCallback((e) => {
-		setDuration(e.target.value);
-	}, []);
+	const handleInput = (e, index) => {
+		let values = [...experienceData];
+		values[index][e.target.name] = e.target.value;
+		setExperienceData(values);
+	};
+
+	const addForm = () => {
+		setExperienceData((prev) => [...prev, { companyName: '', designation: '', duration: '' }]);
+	};
 
 	return (
 		<div>
 			<h1>ExperienceForm</h1>
-			<input type="text" placeholder="Company Name" onChange={handleCompanyName}></input>
-			<input type="text" placeholder="Position" onChange={handleDesignation}></input>
-			<input type="text" placeholder="Duration" onChange={handleDuration}></input>
+			<button onClick={addForm}>Add</button>
+			{experienceData.map((data, index) => {
+				return (
+					<div key={index}>
+						<input
+							name="companyName"
+							type="text"
+							placeholder="Company Name"
+							onChange={(e) => {
+								handleInput(e, index);
+							}}
+						></input>
+						<input
+							name="designation"
+							type="text"
+							placeholder="Position"
+							onChange={(e) => {
+								handleInput(e, index);
+							}}
+						></input>
+						<input
+							name="duration"
+							type="text"
+							placeholder="Duration"
+							onChange={(e) => {
+								handleInput(e, index);
+							}}
+						></input>
+					</div>
+				);
+			})}
 		</div>
 	);
 }
