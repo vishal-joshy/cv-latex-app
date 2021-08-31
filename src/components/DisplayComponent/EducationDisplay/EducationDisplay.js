@@ -4,9 +4,15 @@ function EducationDisplay({ educationData }) {
 	return (
 		<div>
 			<h1>EducationDisplay</h1>
-			<div>SchoolName:{educationData.schoolName}</div>
-			<div>Subject:{educationData.subject}</div>
-			<div>Duration:{educationData.duration}</div>
+			{educationData.map((data, index) => {
+				return (
+					<div key={index}>
+						<div>SchoolName:{data.schoolName}</div>
+						<div>Subject:{data.subject}</div>
+						<div>Duration:{data.duration}</div>
+					</div>
+				);
+			})}
 		</div>
 	);
 }

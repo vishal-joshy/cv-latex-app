@@ -5,10 +5,15 @@ function EducationForm({ getEducationData }) {
 		{ schoolName: '', subject: '', duration: '' },
 	]);
 
+	useEffect(() => {
+		getEducationData(educationData);
+		return () => {};
+	}, [educationData]);
+
 	const addForm = () => {
 		setEducationData((prev) => [...prev, { schoolName: '', subject: '', duration: '' }]);
-		console.log(EducationForm);
 	};
+	
 	const handleInput = (e, index) => {
 		let values = [...educationData];
 		values[index][e.target.name] = e.target.value;
