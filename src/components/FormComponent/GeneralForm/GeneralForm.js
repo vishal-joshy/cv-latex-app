@@ -15,11 +15,26 @@ function GeneralForm({ getGeneralData }) {
 	};
 
 	return (
-		<div>
-			<h1>GeneralForm</h1>
-			<input name="name" type="text" placeholder="Name" onChange={handleInput}></input>
-			<input name="email" type="text" placeholder="Email" onChange={handleInput}></input>
-			<input name="phone" type="text" placeholder="Phone" onChange={handleInput}></input>
+		<div className='flex flex-col w-9/12 m-auto'>
+			<h1 className='font-mono text-xl'>GeneralForm</h1>
+			<input
+				className='form-input'
+				name='name'
+				type='text'
+				placeholder='Name'
+				onChange={handleInput}></input>
+			<input
+				className='form-input'
+				name='email'
+				type='text'
+				placeholder='Email'
+				onChange={handleInput}></input>
+			<input
+				className='form-input'
+				name='phone'
+				type='text'
+				placeholder='Phone'
+				onChange={handleInput}></input>
 		</div>
 	);
 }

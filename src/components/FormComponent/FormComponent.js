@@ -21,11 +21,11 @@ function FormComponent({ getFormData }) {
 		});
 	};
 	return (
-		<div>
+		<div className='flex flex-col'>
 			<GeneralForm getGeneralData={(data) => setGeneralData(data)} />
 			<EducationForm getEducationData={(data) => setEducationData(data)} />
 			<ExperienceForm getExperienceData={(data) => setExperienceData(data)} />
-			<button onClick={onClickSubmit}>Submit</button>
+			<button className='p-1 bg-gray-500 m-auto text-white' onClick={onClickSubmit}>Submit</button>
 		</div>
 	);
 }

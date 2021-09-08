@@ -6,7 +6,7 @@ import GeneralDisplay from './GeneralDisplay/GeneralDisplay';
 function DisplayComponent({ data }) {
 	console.log(data);
 	return (
-		<div>
+		<div className='border-2 m-auto w-9/12'>
 			<GeneralDisplay generalData= {data.generalData}/>
 			<EducationDisplay educationData= {data.educationData} />
 			<ExperienceDisplay experienceData= {data.experienceData}/>

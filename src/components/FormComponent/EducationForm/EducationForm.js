@@ -27,41 +27,43 @@ function EducationForm({ getEducationData }) {
 	};
 
 	return (
-		<div>
-			<h1>EducationForm</h1>
-			<button onClick={addForm}>Add</button>
+		<div className='w-9/12 m-auto'>
+			<div className='flex justify-between'>
+			<h1 className='font-mono text-xl'>EducationForm</h1>
+			<button className='p-2 bg-gray-600 text-white w-12 rounded-sm ' onClick={addForm}>Add</button>
+			</div>
 			{educationData.map((data, index) => {
 				return (
-					<div key={index}>
+					<div className='flex flex-col' key={index}>
 						<input
-							name="schoolName"
-							type="text"
-							placeholder="SchoolName"
+							className='form-input'
+							name='schoolName'
+							type='text'
+							placeholder='SchoolName'
 							onChange={(e) => {
 								handleInput(e, index);
-							}}
-						></input>
+							}}></input>
 						<input
-							name="subject"
-							type="text"
-							placeholder="Subject"
+							className='form-input'
+							name='subject'
+							type='text'
+							placeholder='Subject'
 							onChange={(e) => {
 								handleInput(e, index);
-							}}
-						></input>
+							}}></input>
 						<input
-							name="duration"
-							type="text"
-							placeholder="Duration"
+							className='form-input'
+							name='duration'
+							type='text'
+							placeholder='Duration'
 							onChange={(e) => {
 								handleInput(e, index);
-							}}
-						></input>
+							}}></input>
 						<button
+						className='p-2 bg-gray-600 text-white rounded-sm'
 							onClick={() => {
 								removeData(index);
-							}}
-						>
+							}}>
 							Delete
 						</button>
 					</div>
